@@ -22,6 +22,7 @@
   "serverDetail": {
     "unknown": "Unbekannt",
     "arch": "Arch",
+    "virtualization": "Virtualization",
     "status": "Status",
     "online": "Online",
     "days": "Tage",

@@ -31,6 +31,7 @@ export function formatNezhaInfo(now: number, serverInfo: NezhaServer) {
     net_out_transfer: serverInfo.state.net_out_transfer || 0,
     net_in_transfer: serverInfo.state.net_in_transfer || 0,
     arch: serverInfo.host.arch || "",
+    virtualization: serverInfo.host.virtualization || "",
     mem_total: serverInfo.host.mem_total || 0,
     swap_total: serverInfo.host.swap_total || 0,
     disk_total: serverInfo.host.disk_total || 0,
