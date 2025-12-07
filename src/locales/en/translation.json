@@ -61,6 +61,7 @@
     "uptime": "Uptime",
     "version": "Version",
     "arch": "Arch",
+    "virtualization": "Virtualization",
     "mem": "Mem",
     "disk": "Disk",
     "region": "Region",

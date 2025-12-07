@@ -49,6 +49,7 @@
     "uptime": "நேரம்",
     "version": "பதிப்பு",
     "arch": "மான்",
+    "virtualization": "Virtualization",
     "mem": "மெம்",
     "disk": "வட்டு",
     "region": "பகுதி",
