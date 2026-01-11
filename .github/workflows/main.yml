@@ -1,0 +1,53 @@
+name: Build and release static export
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout current repo (optional)
+        uses: actions/checkout@v4
+
+      - name: Clone private repo (main branch, hidden)
+        run: |
+          git clone \
+            --branch main \
+            --single-branch \
+            https://${{ secrets.PRIVATE_REPO_TOKEN }}@${{ secrets.PRIVATE_REPO_URL#https:// }} app
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: "latest"
+
+      - name: Install dependencies
+        run: |
+          cd app
+          bun install
+
+      - name: Build static export
+        run: |
+          cd app
+          bun run build
+
+      - name: Compress dist folder
+        run: |
+          cd app
+          zip -r dist.zip dist
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: app/dist.zip
+
+      - name: Changelog
+        run: bun x changelogithub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
