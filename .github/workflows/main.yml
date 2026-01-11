@@ -20,7 +20,7 @@ jobs:
           git clone \
             --branch main \
             --single-branch \
-            https://${{ secrets.PRIVATE_REPO_TOKEN }}@${{ secrets.PRIVATE_REPO_URL#https:// }} app
+            https://${{ secrets.PRIVATE_REPO_TOKEN }}@${{ secrets.PRIVATE_REPO_URL }} app
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1
