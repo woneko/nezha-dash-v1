@@ -77,6 +77,7 @@ export default function ServerDetailOverview({
 		uptime,
 		version,
 		arch,
+		virtualization,
 		mem_total,
 		disk_total,
 		country_code,
@@ -175,6 +176,16 @@ export default function ServerDetailOverview({
 						</CardContent>
 					</Card>
 				)}
+				{virtualization && (
+          <Card className="rounded-[10px] bg-transparent border-none shadow-none">
+            <CardContent className="px-1.5 py-1">
+              <section className="flex flex-col items-start gap-0.5">
+                <p className="text-xs text-muted-foreground">{t("serverDetail.virtualization")}</p>
+                <div className="text-xs">{virtualization} </div>
+              </section>
+            </CardContent>
+          </Card>
+        )}
 
 				{mem_total ? (
 					<Card className="rounded-[10px] bg-transparent border-none shadow-none">

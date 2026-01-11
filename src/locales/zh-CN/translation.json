@@ -61,6 +61,7 @@
 		"uptime": "运行时间",
 		"version": "版本",
 		"arch": "架构",
+		"virtualization": "虚拟化",
 		"mem": "内存",
 		"disk": "磁盘",
 		"region": "区域",

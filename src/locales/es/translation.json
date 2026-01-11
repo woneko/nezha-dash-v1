@@ -15,6 +15,7 @@
 		"temperature": "Temperatura",
 		"bootTime": "Inicio del sistema",
 		"arch": "Arch",
+		"virtualization": "Virtualization",
 		"status": "Estado",
 		"online": "En línea",
 		"version": "Versión",

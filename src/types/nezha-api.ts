@@ -22,6 +22,7 @@ export interface NezhaServerHost {
 	disk_total: number;
 	swap_total: number;
 	arch: string;
+	virtualization: string;
 	boot_time: number;
 	version: string;
 }
